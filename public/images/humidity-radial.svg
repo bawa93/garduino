@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 173.791 173.791">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4b5940;
+        font-size: 27px;
+        font-family: BerlinSansFB-Reg, Berlin Sans FB;
+      }
+
+      .cls-2 {
+        fill: #37412a;
+      }
+
+      .cls-3 {
+        fill: #c7ea46;
+      }
+    </style>
+  </defs>
+  <g id="humidity_radial" data-name="humidity radial" transform="translate(0.095 -0.464)">
+    <text id="_75_" data-name="75%" class="cls-1" transform="translate(86.905 96.464)"><tspan x="-22.313" y="0">75%</tspan></text>
+    <g id="Group_143" data-name="Group 143" transform="translate(-0.095 0.464)">
+      <path id="Path_225" data-name="Path 225" class="cls-2" d="M86.9,173.791a86.9,86.9,0,1,1,86.9-86.9A86.823,86.823,0,0,1,86.9,173.791Zm0-153.345A66.45,66.45,0,1,0,153.345,86.9,66.317,66.317,0,0,0,86.9,20.446Z"/>
+      <path id="Path_226" data-name="Path 226" class="cls-3" d="M86.9,173.791A86.9,86.9,0,0,1,86.9,0a10.223,10.223,0,1,1,0,20.446A66.45,66.45,0,1,0,153.345,86.9a10.223,10.223,0,0,1,20.446,0A86.823,86.823,0,0,1,86.9,173.791Z"/>
+    </g>
+  </g>
+</svg>

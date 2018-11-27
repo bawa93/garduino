@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 105.03 147.427">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #37412a;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #71eeb8;
+      }
+
+      .cls-3 {
+        font-size: 8px;
+        font-family: SegoeUI-Bold, Segoe UI;
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        fill: #c7ea46;
+      }
+
+      .cls-5 {
+        filter: url(#Rectangle_2);
+      }
+    </style>
+    <filter id="Rectangle_2" x="35.503" y="56.358" width="56.949" height="73.255" filterUnits="userSpaceOnUse">
+      <feOffset dx="12" dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_7" data-name="Group 7" transform="translate(-914.33 -18.837)">
+    <g id="Group_6" data-name="Group 6" transform="translate(883 -345)">
+      <path id="Path_1" data-name="Path 1" class="cls-1" d="M9.334.461c1.834,3.17,9.334,10.565,9.334,23.6s-9.458,22.78-9.334,23.6S0,37.093,0,24.06,7.5-2.708,9.334.461Z" transform="translate(44.592 385.309) rotate(-37)"/>
+      <path id="Path_2" data-name="Path 2" class="cls-1" d="M6.87.34c1.35,2.333,6.87,7.777,6.87,17.371S6.779,34.479,6.87,35.081,0,27.3,0,17.71,5.521-1.993,6.87.34Z" transform="matrix(0.97, 0.242, -0.242, 0.97, 82.525, 363.837)"/>
+      <path id="Path_3" data-name="Path 3" class="cls-1" d="M10.182.526c1.731,3.135,7.443,8.241,7.443,21.132S8.7,44.188,8.813,45,0,34.548,0,21.657,8.451-2.609,10.182.526Z" transform="translate(102.718 375.347) rotate(33)"/>
+      <g id="Group_5" data-name="Group 5" transform="translate(66.833 423.195)">
+        <g class="cls-5" transform="matrix(1, 0, 0, 1, -35.5, -59.36)">
+          <rect id="Rectangle_2-2" data-name="Rectangle 2" class="cls-1" width="35.949" height="55.255" rx="17.975" transform="translate(35.5 59.36)"/>
+        </g>
+        <rect id="Rectangle_3" data-name="Rectangle 3" class="cls-2" width="0.666" height="38.612" transform="translate(17.309 8.654)"/>
+        <text id="_1" data-name="1" class="cls-3" transform="translate(7.992 14.992)"><tspan x="-2.301" y="0">1</tspan></text>
+        <text id="_0" data-name="0" class="cls-3" transform="translate(25.966 14.992)"><tspan x="-2.301" y="0">0</tspan></text>
+        <text id="_1-2" data-name="1" class="cls-3" transform="translate(25.966 42.952)"><tspan x="-2.301" y="0">1</tspan></text>
+        <text id="_0-2" data-name="0" class="cls-3" transform="translate(25.966 28.972)"><tspan x="-2.301" y="0">0</tspan></text>
+        <text id="_0-3" data-name="0" class="cls-3" transform="translate(7.992 28.972)"><tspan x="-2.301" y="0">0</tspan></text>
+        <text id="_0-4" data-name="0" class="cls-3" transform="translate(7.992 42.952)"><tspan x="-2.301" y="0">0</tspan></text>
+      </g>
+    </g>
+    <path id="Inactive" class="cls-4" d="M33.209,79.231h0V69.752A30.248,30.248,0,1,0,7.733,23.039L0,18A39.837,39.837,0,0,1,17.788,3.113,39.626,39.626,0,0,1,48.629,76.118,39.375,39.375,0,0,1,33.209,79.231Z" transform="translate(1019.359 103.196) rotate(120)"/>
+  </g>
+</svg>
