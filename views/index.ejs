@@ -3,9 +3,46 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+    <script type="text/javascript" src="/javascripts/main2.js"></script>
+
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+
+    <div id="moisture"></div>
+    <div id="temperature"></div>
+    <div id="light"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+    var socket = io();
+
+      function getMoisture() {
+        socket.on('moisture', function (data) {
+          document.getElementById('moisture').innerHTML = data;
+        });
+      }
+
+      function getTemperature() {
+        socket.on('temperature', function (data) {
+          document.getElementById('temperature').innerHTML = data;
+        });
+      }
+
+      function getLight() {
+        socket.on('light', function (data) {
+          document.getElementById('light').innerHTML = data;
+        });
+      }
+      setInterval(function() {
+        getMoisture();
+        getTemperature();
+        getLight();
+      }, 1000);
+    
+      </script>
   </body>
 </html>
