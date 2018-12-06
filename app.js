@@ -96,23 +96,26 @@ board.on("ready", function() {
         pin: 'A0',
         freq: 250
     });
+
+    // process sensor data
+    setTimeout(function() {
+        setInterval(function() {
+            emitChartData(io, tempSensor, lightSensor, moistureSensor)
+        }, 1000);
+    },10000);
+
+    // save measurement to rethinkdb on each interval
+    setInterval(function() {
+        saveRecordings(connection, tempSensor, lightSensor, moistureSensor)
+    }, 10000)
+
+
 });
   
 //
 
 // board ready code end
 
-// process sensor data
-setTimeout(function() {
-    setInterval(function() {
-        emitChartData(io, tempSensor, lightSensor, moistureSensor)
-    }, 1000);
-},10000);
-
-// save measurement to rethinkdb on each interval
-setInterval(function() {
-    saveRecordings(connection, tempSensor, lightSensor, moistureSensor)
-}, 10000)
 
 
 // process sensor data end

@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 631.791 866">
+  <defs>
+    <style>
+      .cls-1, .cls-10, .cls-14, .cls-3, .cls-9 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #4b5940;
+        stroke-width: 20px;
+      }
+
+      .cls-2, .cls-8 {
+        fill: #c7ea46;
+      }
+
+      .cls-12, .cls-2 {
+        stroke: #707070;
+      }
+
+      .cls-3, .cls-4 {
+        stroke: #29ab87;
+      }
+
+      .cls-3 {
+        stroke-width: 3px;
+      }
+
+      .cls-4 {
+        fill: #29ab87;
+      }
+
+      .cls-12, .cls-5 {
+        fill: #56664c;
+      }
+
+      .cls-6 {
+        fill: #a89bfe;
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-9 {
+        stroke: #000;
+      }
+
+      .cls-10 {
+        stroke: #c7ea46;
+      }
+
+      .cls-11 {
+        fill: #4b5940;
+        font-size: 8px;
+        font-family: BerlinSansFBDemi-Bold, Berlin Sans FB;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+
+      .cls-12 {
+        stroke-width: 0.5px;
+      }
+
+      .cls-13 {
+        stroke: none;
+      }
+
+      .cls-15 {
+        filter: url(#Path_116-2);
+      }
+
+      .cls-16 {
+        filter: url(#Path_120);
+      }
+
+      .cls-17 {
+        filter: url(#Path_119);
+      }
+
+      .cls-18 {
+        filter: url(#Path_116);
+      }
+
+      .cls-19 {
+        filter: url(#Rectangle_2);
+      }
+    </style>
+    <filter id="Rectangle_2" x="394.103" y="329" width="237.688" height="351.058" filterUnits="userSpaceOnUse">
+      <feOffset dx="12" dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_116" x="384.986" y="558.239" width="234.986" height="95.761" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4b5940"/>
+      <stop offset="1" stop-color="#0f120d"/>
+    </linearGradient>
+    <filter id="Path_119" x="474" y="745" width="29" height="121" filterUnits="userSpaceOnUse">
+      <feOffset dx="10" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_120" x="534" y="745" width="29" height="121" filterUnits="userSpaceOnUse">
+      <feOffset dx="10" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_116-2" x="385.297" y="670.489" width="234.365" height="95.261" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-5"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="device-buy-box" transform="translate(-708 -177)">
+    <g id="Rectangle_5" data-name="Rectangle 5" class="cls-1" transform="translate(708 177)">
+      <rect class="cls-13" width="505" height="726" rx="129"/>
+      <rect class="cls-14" x="10" y="10" width="485" height="706" rx="119"/>
+    </g>
+    <g id="Group_21" data-name="Group 21">
+      <g id="Group_20" data-name="Group 20" transform="translate(42 -40)">
+        <g id="Group_5" data-name="Group 5" transform="translate(1060.103 549)">
+          <g class="cls-19" transform="matrix(1, 0, 0, 1, -394.1, -332)">
+            <rect id="Rectangle_2-2" data-name="Rectangle 2" width="216.688" height="333.058" rx="108.344" transform="translate(394.1 332)"/>
+          </g>
+        </g>
+        <g id="Group_18" data-name="Group 18" transform="translate(1060.609 781.739)">
+          <g class="cls-18" transform="matrix(1, 0, 0, 1, -394.61, -564.74)">
+            <path id="Path_116-3" data-name="Path 116" class="cls-2" d="M710.479,2909.288c10.078,63.26,69.389,64.15,69.389,64.15s29.6-.314,76.966,0,62.609-58.461,62.609-58.461l3.988-18.3h-73.2s-19.661,26.841-33.86,26.841-39.32-26.841-39.32-26.841H707.688Z" transform="translate(-313.08 -2331.94)"/>
+          </g>
+        </g>
+        <g id="Ellipse_78" data-name="Ellipse 78" class="cls-3" transform="translate(1154.419 768.069)">
+          <circle class="cls-13" cx="13.749" cy="13.749" r="13.749"/>
+          <circle class="cls-14" cx="13.749" cy="13.749" r="12.249"/>
+        </g>
+        <rect id="Rectangle_6" data-name="Rectangle 6" width="10.083" height="13.749" transform="translate(1162.668 761.653)"/>
+        <g id="Rectangle_7" data-name="Rectangle 7" class="cls-4" transform="translate(1166.335 761.653)">
+          <rect class="cls-13" width="2.75" height="16.499"/>
+          <rect class="cls-14" x="0.5" y="0.5" width="1.75" height="15.499"/>
+        </g>
+        <circle id="Ellipse_79" data-name="Ellipse 79" class="cls-5" cx="5.958" cy="5.958" r="5.958" transform="translate(1181.917 609.496)"/>
+        <circle id="Ellipse_80" data-name="Ellipse 80" class="cls-6" cx="5.958" cy="5.958" r="5.958" transform="translate(1142.503 609.496)"/>
+      </g>
+      <g class="cls-17" transform="matrix(1, 0, 0, 1, 708, 177)">
+        <path id="Path_119-2" data-name="Path 119" class="cls-7" d="M5,0a5,5,0,0,1,5,5V98A5,5,0,0,1,0,98V5A5,5,0,0,1,5,0Z" transform="translate(474 751)"/>
+      </g>
+      <g class="cls-16" transform="matrix(1, 0, 0, 1, 708, 177)">
+        <path id="Path_120-2" data-name="Path 120" class="cls-7" d="M5,0a5,5,0,0,1,5,5V98A5,5,0,0,1,0,98V5A5,5,0,0,1,5,0Z" transform="translate(534 751)"/>
+      </g>
+    </g>
+    <g id="Group_22" data-name="Group 22" transform="translate(-1)">
+      <rect id="Rectangle_8" data-name="Rectangle 8" class="cls-8" width="23" height="11" rx="5" transform="translate(1255 724)"/>
+      <g id="Rectangle_9" data-name="Rectangle 9" class="cls-9" transform="translate(1259 724)">
+        <rect class="cls-13" width="2" height="11"/>
+        <rect class="cls-14" x="0.5" y="0.5" width="1" height="10"/>
+      </g>
+      <g id="Rectangle_10" data-name="Rectangle 10" class="cls-9" transform="translate(1265 724)">
+        <rect class="cls-13" width="2" height="11"/>
+        <rect class="cls-14" x="0.5" y="0.5" width="1" height="10"/>
+      </g>
+      <g id="Rectangle_11" data-name="Rectangle 11" class="cls-9" transform="translate(1271 724)">
+        <rect class="cls-13" width="2" height="11"/>
+        <rect class="cls-14" x="0.5" y="0.5" width="1" height="10"/>
+      </g>
+      <g id="Rectangle_12" data-name="Rectangle 12" class="cls-10" transform="translate(1279 728)">
+        <rect class="cls-13" width="2" height="3"/>
+        <rect class="cls-14" x="0.5" y="0.5" width="1" height="2"/>
+      </g>
+    </g>
+    <text id="FLORA" class="cls-11" transform="translate(1197.5 824.5)"><tspan x="0" y="7">FLORA</tspan></text>
+    <g id="Group_23" data-name="Group 23" transform="translate(1102.609 853.739)">
+      <g class="cls-15" transform="matrix(1, 0, 0, 1, -394.61, -676.74)">
+        <path id="Path_116-4" data-name="Path 116" class="cls-12" d="M710.479,2909.288c10.078,63.26,69.389,64.15,69.389,64.15s29.6-.314,76.966,0,62.609-58.461,62.609-58.461l3.988-18.3h-73.2s-19.661,26.841-33.86,26.841-39.32-26.841-39.32-26.841H707.688Z" transform="translate(-313.08 -2219.94)"/>
+      </g>
+    </g>
+  </g>
+</svg>
