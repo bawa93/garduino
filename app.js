@@ -3,13 +3,27 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-
+var session = require('express-session');
 
 var app = express();
-
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var requestObject = '';
+function checkAuth (req, res, next) {
+	console.log('checkAuth ' + req.url);
+    requestObject = req;
+	// don't serve /secure to those not logged in
+	// you should add to this list, for each and every secure url
+	if (req.url === '/secure' && (!req.session || !req.session.authenticated)) {
+		res.render('unauthorised', { status: 403 });
+		return;
+	}
+
+	next();
+}
+
 
 // 
 var moistureSensor, tempSensor, lightSensor;
@@ -41,7 +55,7 @@ connection.connect(function(err) {
     console.log('database connected as id ' + connection.threadId);
 });
 
-
+var indexRouter = require('./routes/index');
 //connection.end()
 
 function saveRecordings(connection, tempSensor, lightSensor, moistureSensor) {
@@ -55,7 +69,7 @@ function saveRecordings(connection, tempSensor, lightSensor, moistureSensor) {
     console.log(lightVal);
 
     console.log(tempVal);
-
+    console.log();
     connection.query('INSERT INTO `readings` (`id`, `plant_id`, `moisture`, `temperature`, `light`, `updated_at`) VALUES (NULL, ' + `"1", "${moistureVal}", "${tempVal}", "${lightVal}", CURRENT_TIMESTAMP);`, function(err, rows, fields) {
         if (err) throw err
         var last_inserted_id = rows.insertId;
@@ -120,12 +134,24 @@ board.on("ready", function() {
 
     // save measurement to rethinkdb on each interval
     setInterval(function() {
+        
         saveRecordings(connection, tempSensor, lightSensor, moistureSensor)
+          
+
+        
     }, 10000)
 
 
 });
-  
+  app.use(function(req, res, next) {
+    if (req.session) {
+        console.log('logged');
+        next();
+    } else {
+        console.log('not condition');
+        next();
+    }
+});
 //
 
 // board ready code end
@@ -241,7 +267,7 @@ function getRandomInt(min, max) {
     }
     hour_data = hour_data.substring(1);
 
-console.log(moisture_data)
+// console.log(moisture_data)
         res.render('user_panel/stats', {
             temprature_data: temprature_data,
             moisture_data: moisture_data,
@@ -255,14 +281,17 @@ console.log(moisture_data)
     //   stats: stats
     // });
   });
-  var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-// functions end
 
+// functions end
+var flash = require('connect-flash');
+
+app.use(flash());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(session({secret: 'keyboard cat',resave:true, saveUninitialized:true}))
 
+app.use(checkAuth);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

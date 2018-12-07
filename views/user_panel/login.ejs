@@ -1,0 +1,9 @@
+<% if(message !='' && message !=null) {%> 
+
+    <%= message %>
+<% } %>
+<form method="post" action="/users/login">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <input type="submit" value="Sign In">
+</form>

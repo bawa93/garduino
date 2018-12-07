@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-
+  req.session.plantid = 1;
   res.render('index', { title: 'Express' });
 });
 
@@ -36,7 +36,7 @@ router.get('/api/light', function (req, res, next) {
     res.write(JSON.stringify(measurements))
     res.end()
   })
-})
+});
 
 router.get('/api/moisture', function (req, res, next) {
   getAllMoistureMeasurements(function (err, measurements) {
