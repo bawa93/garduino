@@ -6,7 +6,12 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
 
+<div class="card">
 
+    <div class="card-body">
+
+
+        <div class="cart-text">
             <% if(message !='' && message !=null) {%>
 
 
@@ -18,17 +23,19 @@
 <form method="post" action="/users/add_plant" encType="multipart/form-data">
                 <div class="form-group">
                     <label for="usr">Plant Title:</label>
-                    <input type="text" class="form-control" id="usr" name="title">
+                    <input type="text" class="form-control" id="usr" name="title" placeholder="Plant Name">
                 </div>
                 
                 <div class="form-group">
                     <label for="pwd">Image:</label>
-                    <input type="file" class="form-control" id="pwd" name="image">
+                    <input type="file" class="form-control" id="pwd" name="image" placeholder="Some Image">
                 </div>
                 <input type="submit" class=" btn btn-primary btn-block" value="Add a Plant" />
 
             </form>
-
+        </div>
+        </div>
+        </div>
         </div>
         <div class="col-md-3"></div>
     </div>

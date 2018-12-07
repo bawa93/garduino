@@ -218,7 +218,7 @@
      .compact-bg {
          position: absolute;
          top: 241px;
-         left: 0%;
+         left: 5%;
          font-size: 32px;
          z-index: 9999;
          font-weight: bold;
@@ -261,7 +261,10 @@ padding-left: .8rem;
     .navbar-brand.abs img {
         padding-left: 15px;
     }
+    
+      
 }
+
 
 .compact-light {
     opacity: 0.4;
@@ -306,4 +309,24 @@ padding-left: .8rem;
 
 .text-light-yellow {
     color: #9AC156;
+}
+.bottom-link {
+    position: absolute;
+
+    bottom: 10px;
+
+    left: 33%;
+}
+
+@media (max-width: 768px) {
+    .signup-button {
+        position: initial;
+        margin-bottom: 10px;
+    }
+
+    .bottom-link {
+        position: initial;
+
+        
+    }
 }

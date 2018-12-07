@@ -9,7 +9,14 @@
 </div>
 <div class="col-md-6">
 
+<div class="card">
+    
+    <div class="card-body">
 
+
+    <div class="cart-text">
+
+</div>
 <% if(message !='' && message !=null) {%> 
 
     
@@ -19,21 +26,25 @@
 </div>
 <% } %>
 
+
 <form method="post" action="/users/login">
 <div class="form-group">
     <label for="usr">Email:</label>
-    <input type="email" class="form-control" id="usr" name="email">
+    <input type="email" class="form-control" id="usr" name="email" placeholder="Your Email">
 </div>
 <div class="form-group">
     <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd" name="password">
+    <input type="password" class="form-control" id="pwd" name="password" placeholder="Your Password">
 </div>
 <input type="submit" class=" btn btn-primary btn-block" value="Sign In"/>
-</div>
-</form>
 
+</form>
+</div>
+</div>
 </div>
 <div class="col-md-3"></div>
+
+</div>
 
 </div>
 <%- include('partials/footer') %>
