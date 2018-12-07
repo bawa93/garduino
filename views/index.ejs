@@ -1,90 +1,204 @@
+<%- include('partials/header') %>
 
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/libs/chart.js"></script>
-    
-  </head>
-  <body>
-    
-  </body>
-  </html>
- 
-
-    <div id="moisture"></div>
-    <div id="temperature"></div>
-    <div id="light"></div>
-
-    <div id="canvas-holder" style="width:50%">
-      <canvas id="chart-area"  width="800" height="450"></canvas>
-      
-      <canvas id="bar-chart" width="800" height="450"></canvas>
-      <canvas id="bar-chart-grouped" width="800" height="450"></canvas>
+<div class="container">
+<section class="row hero-section">
+  <h2 class="hidden">Product Info</h2>
+  <div class="col-md-6">
+    <div id="unique-product">Unique Product</div>
+    <div id="hero-title">Flora.</div>
+    <div id="hero-description"><strong>FLORA</strong> is a plant monitoring sytem. It analysis your plant and make sure
+      every
+      thing is
+      suitable for complete growth of
+      your plant.
     </div>
+  </div>
+  <div class="col-md-6">
+  </div>
+</section>
+</div>
+<div class="container features">
+  <section class="row page-section-row page-section-dark">
+    <h2 class="hidden">Key Features</h2>
+    <div class="col-md-6 text-center">
+      <img src="images/features-vecture.svg" class="features__image" alt="features">
+    </div>
+    <div class="col-md-6 text-center">
+      <div id="key-features" class="column-title">
+        Key Features
+      </div>
+      <div id="key-features-info-box" class="column-detail-box">
+        Within FLORA we try to make everything easy to understand. We follow <strong>CAT theory</strong>,
+        which is <strong>Care</strong>
+        for your plant,
+        <strong>Analyse</strong>
+        your plant and keep <strong>Track</strong> of it. All the information is produced in an legible
+        format so, you
+        can bond with
+        your plant
+        in a well manner.
+      </div>
+      <div id="key-features-list">
+        <ol>
+          <li>
+            Analyse the growth of plant with different sensors.
+          </li>
+          <li>
+            Use of <strong>Arduino sensors</strong> for an accurate results.
+          </li>
+          <li>
+            Consist of sensors for Humidity, Soil Fertility, Sunlight.
+          </li>
+          <li>
+            Easy to use - with just plug and run support.
+          </li>
+          <li>
+            Gives data of your plant in multiple <strong>graph formats</strong>.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <section class="row page-section-row page-section-light graphs">
+    <h2 class="hidden">Graphs</h2>
+    <div class="col-md-6 graphs__info">
+      <div class="column-title">
+        Graphs and You
+      </div>
+      <div class="column-detail-box">
+        We use the technology which uses modernise ways to show data and keep track of it. In FLORA we
+        use graphical
+        representations to show accurate plant data, so, you do not have to get paranoid about numbers
+        and can easily
+        understand what is going on with your plant. The graphs will show you <strong>live data</strong>
+        and keep record
+        of all the data from
+        the first time your plant gets connected with flora. Make <strong>FLORA</strong> another root
+        for your plant.
+        The device will get connected with your plant by direct plugging it and it will start
+        collecting data. You can check
+        all the data by logging in your account on our website <a href="https://www.flora.ca">https://www.flora.ca</a>
+      </div>
+    </div>
+    <div class="col-md-6 graphs__items">
+      <div class="row graph-row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="images/humidity-radial.svg" alt="Humidity">
+            </div>
+            <div class="col-md-8">
+              <div class="graph-title">
+                Humidity
+              </div>
+              <div class="graph-detail-box">
+                Keeps track of Moisture level of plant and make sure it gets more than 8 glass
+                of water/day.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="row graph-row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9 graphs__item-dark">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="images/sunlight.svg" alt="Sunlight">
+            </div>
+            <div class="col-md-8">
+              <div class="graph-title">
+                Sunlight
+              </div>
+              <div class="graph-detail-box">
+                Sun is the energy source of our solar system and for your plant to. Keeps the
+                track of sunlight.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row graph-row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="images/fertility.svg" alt="Fertility">
+            </div>
+            <div class="col-md-8">
+              <div class="graph-title">
+                Fertility
+              </div>
+              <div class="graph-detail-box">
+                No matter what you sow, you will reap nothing when soil is not fertile. Check
+                for fertility of soil.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+  </section>
+</div>
+<section class="container" style="position:relative;">
+  <h2 class="hidden">Graphs</h2>
+  <div class="row page-section-dark">
+    <div class="col-md-12">
+      <div class="compact-bg" style="
+                  ">
+        <span class="opacity-light">Co</span><span style="color:#c7ea47;">mpa</span><span class="opacity-light">ct</span>
+      </div>
+    </div>
+  </div>
 
-    <script></script>
+  <div class="row page-section-row page-section-dark">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 text-center">
+      <div class="device-buy-box">
+        <div class="product-info">
+          <div class="price-tag">
+            Price: $48.99
+          </div>
+          <div style="margin-top:10px;">
+            <div class="product-quantity">
+              Quantity:
+              <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+              </select>
+            </div>
+            <div class="product-payment-method">
+              Payment Method:<br>
+              <select class="form-control">
+                <option>Visa/Mastercard</option>
+                <option>Paypal</option>
+              </select>
+            </div>
+          </div>
+          <div id="payment-checkout">
+            <button id="checkout" class="btn btn-lg button-general">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3" style="align-self: flex-end;">
+      <div class="get-our-app">
+        Get Our App
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="images/google-play-badge.svg" style="height:50px;" alt="Google Play download link">
+        </div>
+        <div class="col-md-6">
+          <img src="images/download-on-the-app-store-apple.svg" style="height:50px;" alt="App Store download link">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-    <script>
-  
-      var socket = io();
-      
-      function getMoisture() {
-        socket.on('moisture', function (data) {
-            return data;
-          document.getElementById('moisture').innerHTML = data;
-        });
-      }
-      
-      // function getTemperature() {
-      
-      
-        var tempChart = new Chart(document.getElementById("chart-area"), {
-              type: 'pie',
-              data: {
-                labels: ["Moisture", ''],
-                datasets: [{
-                  label: "Moisture Level",
-                  backgroundColor: ["#3e95cd", "#eee"],
-                  data: [25,75]
-                }]
-              },
-              options: {
-                title: {
-                  display: true,
-                  text: 'Live Moisture Reading'
-                }
-              }
-              });
-      
-      
-        socket.on('temperature', function (data) {
-            // return data;
-            var remainingFromHundred = (100 - data);
-            console.log(data);
-            tempChart.data.datasets[0].data = [data,remainingFromHundred];
-            tempChart.update();
-            
-      
-          // document.getElementById('temperature').innerHTML = data;
-        });
-      // }
-      
-      function getLight() {
-        socket.on('light', function (data) {
-            // return data;
-          document.getElementById('light').innerHTML = data;
-        });
-      }
-      
-      
-      // getTemperature();
-      </script>
-          
-<script src="/js/result-charts2.js"></script>
+</div>
+<%- include('partials/footer') %>

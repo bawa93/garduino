@@ -1,36 +1,60 @@
+<%- include('../partials/header') %>
+<div class="container" style="margin-top:30px;">
+  <div class="row">
+    <div class="col-md-4" style="background-color: #04231D">
+      <div class="user">
+        <div class="user__image" style="border-radius: 15px;">
+          <img src="/images/plants/<%= plant_id %>.jpg" class="img-fluid rounded-circle" style="border:12px solid #1B3732;max-width: 180px;;">
+        </div>
+        <div class="user__name">
+Plant ID: <%= plant_id %>
+          
+        </div>
+        <div class="text-small">Last updated 7 min ago</div>
+        <div class="text-bold">
+          Connected
+        </div>
+      </div>
+      <div class="btn btn-primary" style="color: #fff;position: absolute;
 
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/libs/chart.js"></script>
-    
-  </head>
-  <body>
-    
-  </body>
-  </html>
- 
-
-    <div id="moisture"></div>
-    <div id="temperature"></div>
-    <div id="light"></div>
-
-    <div id="canvas-holder" style="width:50%">
-      <canvas id="chart-area"  width="800" height="450"></canvas>
-      
-      <canvas id="bar-chart" width="800" height="450"></canvas>
-      <canvas id="bar-chart-grouped" width="800" height="450"></canvas>
+                    bottom: 10px;
+                    
+                    left: 33%;">
+        <a href="/users/stats/<%= plant_id %>" style="text-decoration:none;color:white;">
+          Check Stats
+        </a>
+      </div>
     </div>
+    <div class="col-md-8">
+      <div class="head-title text-uppercase font-weight-bold">
+        Plant: #<%= plant_id %>
+      </div>
+      <div class="head-info">
+        Check your plant's condition with different graphical representations below. These graphs show accurate and
+        real-time
+        info.
+      </div>
+      <div class="container p-2" style="background-color:#04231D">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-light-yellow pt-3 pl-4">
+              Your Plants
+            </div>
 
-    <script></script>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+<canvas id="masterChart" style="height:150px;"></canvas>
+            
+          </div>
 
+        </div>
+      </div>
 
+    </div>
+  </div>
+</div>
     <script>
   
       var hour_data = [<%- hour_data %>];
@@ -44,7 +68,7 @@
       // function getTemperature() {
       
       
-var masterChart = new Chart(document.getElementById("bar-chart-grouped"), {
+var masterChart = new Chart(document.getElementById("masterChart"), {
     type: 'bar',
     data: {
       labels: hour_data,
@@ -72,20 +96,7 @@ var masterChart = new Chart(document.getElementById("bar-chart-grouped"), {
       }
     }
 });
-      
-      
-        
-      // }
-      
-      function getLight() {
-        socket.on('light', function (data) {
-            // return data;
-          document.getElementById('light').innerHTML = data;
-        });
-      }
-      
-      
-      // getTemperature();
-      </script>
-          
-<script src="/js/result-charts2.js"></script>
+
+</script>
+
+<%- include('../partials/footer') %>

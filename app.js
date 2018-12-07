@@ -4,8 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+const fileUpload = require('express-fileupload');
+
 
 var app = express();
+app.use(fileUpload());
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var server = require('http').Server(app);
@@ -13,10 +16,10 @@ var io = require('socket.io')(server);
 var requestObject = '';
 function checkAuth (req, res, next) {
 	console.log('checkAuth ' + req.url);
-    requestObject = req;
+    // requestObject = req;
 	// don't serve /secure to those not logged in
 	// you should add to this list, for each and every secure url
-	if (req.url === '/secure' && (!req.session || !req.session.authenticated)) {
+	if (req.url === '/users/dashboard' && (!req.session || !req.session.authenticated)) {
 		res.render('unauthorised', { status: 403 });
 		return;
 	}
@@ -233,10 +236,10 @@ function getRandomInt(min, max) {
     return getAllMeasurementsOfCertainType('moisture', plant_id)
   }
 
-  app.get('/stats', function(req, res, next) {
+  app.get('/users/stats/:plant_id', function(req, res, next) {
 
     var sql = `
-    SELECT date_format( updated_at, '%Y-%m-%d %h:00 %p' ) as date, date_format( updated_at, '%h' ) as hour,ROUND(AVG(moisture)) as moisture, ROUND(AVG(light)) as light, ROUND(AVG(temperature)) as temperature FROM readings WHERE plant_id=1 GROUP BY hour( updated_at ) , day( updated_at ) ORDER BY updated_at DESC LIMIT 0,5
+    SELECT date_format( updated_at, '%Y-%m-%d %h:00 %p' ) as date, date_format( updated_at, '%h' ) as hour,ROUND(AVG(moisture)) as moisture, ROUND(AVG(light)) as light, ROUND(AVG(temperature)) as temperature FROM readings WHERE plant_id=${req.params.plant_id} GROUP BY hour( updated_at ) , day( updated_at ) ORDER BY updated_at DESC LIMIT 0,5
     `;
 
     connection.query(sql, function(err, rows, fields) {
@@ -272,7 +275,8 @@ function getRandomInt(min, max) {
             temprature_data: temprature_data,
             moisture_data: moisture_data,
             light_data: light_data,
-            hour_data: hour_data
+            hour_data: hour_data,
+            plant_id: req.params.plant_id
           });
     });
 

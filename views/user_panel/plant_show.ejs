@@ -1,0 +1,163 @@
+<%- include('../partials/header') %>
+<div class="container" style="margin-top:30px;">
+    <div class="row">
+        <div class="col-md-4" style="background-color: #04231D">
+            <div class="user">
+                <div class="user__image" style="border-radius: 15px;">
+                    <img src="/images/plants/<%= plant.id %>.jpg" class="img-fluid rounded-circle" style="border:12px solid #1B3732;max-width: 180px;;">
+                </div>
+                <div class="user__name">
+                    <%= plant.title %>
+                </div>
+                <div class="text-small">Last updated 7 min ago</div>
+                <div class="text-bold text-primary">
+                    Connected
+                </div>
+            </div>
+            <div class="btn btn-primary" style="position: absolute;
+
+                    bottom: 10px;
+                    
+                    left: 33%;">
+<a style="text-decoration: none;color:white;" href="/users/stats/<%= plant.id %>">
+                        Check Stats
+                    </a>
+                </div>
+        </div>
+        <div class="col-md-8">
+            <div class="head-title text-uppercase font-weight-bold">
+<%= plant.title %>
+            </div>
+            <div class="head-info">
+Check your plant's condition with different graphical representations below. These graphs show accurate and real-time
+info.
+            </div>
+            <div class="container p-2" style="background-color:#04231D">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-light-yellow pt-3 pl-4">
+                            Your Plants
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="plant-container">
+<canvas id="moisture" width="100%" height="200"></canvas>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="plant-container">
+<canvas id="temperature" width="100%" height="200"></canvas>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="plant-container">
+<canvas id="light" width="100%" height="200"></canvas>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    var socket = io();
+
+        
+    
+
+    // function getTemperature() {
+
+
+    var moisture_chart = new Chart(document.getElementById("moisture"), {
+type: 'doughnut',
+        data: {
+            labels: ["Moisture", ''],
+            datasets: [{
+                label: "Moisture Level",
+                backgroundColor: ["#94d619", "#eee"],
+                data: [25, 75]
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Live Moisture Reading'
+            }
+        }
+    });
+
+    socket.on('moisture', function (data) {
+    var remainingFromHundred = (100 - data);
+    console.log(data);
+    moisture_chart.data.datasets[0].data = [data, remainingFromHundred];
+    moisture_chart.update();
+    });
+
+    var temperature_chart = new Chart(document.getElementById("temperature"), {
+            type: 'doughnut',
+            data: {
+                labels: ["Temperature", ''],
+                datasets: [{
+                label: "Temperature Level",
+backgroundColor: ["#9AC156", "#eee"],
+                data: [25, 75]
+                }]
+            },
+            options: {
+            title: {
+                display: true,
+                text: 'Live Temperature Reading'
+            }
+        }
+    });
+    socket.on('temperature', function (data) {
+        // return data;
+var remainingFromHundred = (100 - data);
+console.log(data);
+temperature_chart.data.datasets[0].data = [data, remainingFromHundred];
+temperature_chart.update();
+    });
+    // }
+
+var light_chart = new Chart(document.getElementById("light"), {
+type: 'doughnut',
+data: {
+labels: ["Light", ''],
+datasets: [{
+label: "Light Level",
+backgroundColor: ["#0F3D33", "#eee"],
+data: [25, 75]
+}]
+},
+options: {
+title: {
+display: true,
+text: 'Live Light Reading'
+}
+}
+});
+    socket.on('light', function (data) {
+        // document.getElementById('light').innerHTML = data;
+// return data;
+var remainingFromHundred = (100 - data);
+console.log(data);
+light_chart.data.datasets[0].data = [data, remainingFromHundred];
+light_chart.update();
+    });
+    
+
+
+    // getTemperature();
+</script>
+
+
+
+<%- include('../partials/footer') %>
