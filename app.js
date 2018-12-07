@@ -4,8 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
 
 var app = express();
 
@@ -29,7 +28,8 @@ var connection = mysql.createConnection({
     host: 'sql3.freemysqlhosting.net',
     user: 'sql3268620',
     password: '5LHnvQMHJP',
-    database: 'sql3268620'
+    database: 'sql3268620',
+    timezone: 'EST'
 });
 
 connection.connect(function(err) {
@@ -63,6 +63,20 @@ function saveRecordings(connection, tempSensor, lightSensor, moistureSensor) {
         console.log('Last inserted item id : ', rows.insertId)
     });
 
+}
+
+function ReadingsByHour() {
+
+
+    var sql = `
+    SELECT date_format( updated_at, '%Y-%m-%d %h:00 %p' ) as date, date_format( updated_at, '%h:00 %p' ) as hour,ROUND(AVG(moisture)) as moisture, ROUND(AVG(light)) as light, ROUND(AVG(temperature)) as temperature FROM readings WHERE plant_id=1 GROUP BY hour( updated_at ) , day( updated_at ) ORDER BY updated_at DESC
+    `;
+
+    connection.query(sql, function(err, rows, fields) {
+        if (err) throw err
+        // console.log(rows);
+        return rows;
+    });
 }
 
 // databse logic end
@@ -193,6 +207,56 @@ function getRandomInt(min, max) {
     return getAllMeasurementsOfCertainType('moisture', plant_id)
   }
 
+  app.get('/stats', function(req, res, next) {
+
+    var sql = `
+    SELECT date_format( updated_at, '%Y-%m-%d %h:00 %p' ) as date, date_format( updated_at, '%h' ) as hour,ROUND(AVG(moisture)) as moisture, ROUND(AVG(light)) as light, ROUND(AVG(temperature)) as temperature FROM readings WHERE plant_id=1 GROUP BY hour( updated_at ) , day( updated_at ) ORDER BY updated_at DESC LIMIT 0,5
+    `;
+
+    connection.query(sql, function(err, rows, fields) {
+        if (err) throw err
+        // console.log(rows);
+        var temprature_data = '';
+        var moisture_data = ''; 
+        var light_data = ''; 
+        var hour_data = '';
+        
+        for(var i=0; i<rows.length; i++) {
+                temprature_data += ',' +rows[i].temperature;
+        }
+        temprature_data = temprature_data.substring(1);
+
+        for(var i=0; i<rows.length; i++) {
+            moisture_data += ',' +rows[i].moisture;
+    }
+    moisture_data = moisture_data.substring(1);
+
+    for(var i=0; i<rows.length; i++) {
+        light_data += ',' +rows[i].light;
+    }
+    light_data = light_data.substring(1);
+
+    for(var i=0; i<rows.length; i++) {
+        hour_data += ',' +rows[i].hour + '';
+    }
+    hour_data = hour_data.substring(1);
+
+console.log(moisture_data)
+        res.render('user_panel/stats', {
+            temprature_data: temprature_data,
+            moisture_data: moisture_data,
+            light_data: light_data,
+            hour_data: hour_data
+          });
+    });
+
+    // var stats = ReadingsByHour();
+    // res.render('user_panel/stats', {
+    //   stats: stats
+    // });
+  });
+  var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 // functions end
 
 // view engine setup

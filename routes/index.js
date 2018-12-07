@@ -7,15 +7,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/temperature', function (req, res, next) {
-  res.render('temperature')
+  res.render('user_panel/readings/temperature')
 })
 
 router.get('/light', function (req, res, next) {
-  res.render('light')
+  rres.render('user_panel/readings/light')
 })
 
 router.get('/moisture', function (req, res, next) {
-  res.render('moisture')
+  res.render('user_panel/readings/moisture')
 })
 
 

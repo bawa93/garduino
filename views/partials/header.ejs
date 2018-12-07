@@ -35,6 +35,40 @@
     border-color: rgb(28, 208, 154);
 }
       </style>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="/js/libs/chart.js"></script>
+
+<!-- <script src="/js/socket.js"></script> -->
+
+<script>
+var socket = io();
+
+function getMoisture() {
+  socket.on('moisture', function (data) {
+      return data;
+  //   document.getElementById('moisture').innerHTML = data;
+  });
+}
+
+function getTemperature() {
+  socket.on('temperature', function (data) {
+      return data;
+  //   document.getElementById('temperature').innerHTML = data;
+  });
+}
+
+function getLight() {
+  socket.on('light', function (data) {
+      return data;
+  //   document.getElementById('light').innerHTML = data;
+  });
+}
+
+console.log(getMoisture());
+</script>
+
     </head>
 
     <body>

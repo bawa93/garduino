@@ -6,4 +6,11 @@ router.get('/', function(req, res, next) {
   res.render('user_panel/dashboard');
 });
 
+router.get('/', function(req, res, next) {
+  res.render('user_panel/dashboard');
+});
+
+
+
+
 module.exports = router;

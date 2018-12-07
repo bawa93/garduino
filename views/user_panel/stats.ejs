@@ -33,47 +33,48 @@
 
     <script>
   
-      var socket = io();
+      var hour_data = [<%- hour_data %>];
+      var moisture_data = [<%- moisture_data %>];
+      var light_data = [<%- light_data %>];
+      var temprature_data = [<%- temprature_data %>];
+
       
-      function getMoisture() {
-        socket.on('moisture', function (data) {
-            return data;
-          document.getElementById('moisture').innerHTML = data;
-        });
-      }
+    //   console.log(hour_data);
       
       // function getTemperature() {
       
       
-        var tempChart = new Chart(document.getElementById("chart-area"), {
-              type: 'pie',
-              data: {
-                labels: ["Moisture", ''],
-                datasets: [{
-                  label: "Moisture Level",
-                  backgroundColor: ["#3e95cd", "#eee"],
-                  data: [25,75]
-                }]
-              },
-              options: {
-                title: {
-                  display: true,
-                  text: 'Live Moisture Reading'
-                }
-              }
-              });
+var masterChart = new Chart(document.getElementById("bar-chart-grouped"), {
+    type: 'bar',
+    data: {
+      labels: hour_data,
+      datasets: [
+        {
+          label: "Moisture",
+          backgroundColor: "#3e95cd",
+          data: moisture_data
+        }, {
+          label: "Light",
+          backgroundColor: "#8e5ea2",
+          data: light_data
+        },
+        {
+          label: "Temperature",
+          backgroundColor: "#ce7322",
+          data: temprature_data
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Recent Temperature Moisture, Light values'
+      }
+    }
+});
       
       
-        socket.on('temperature', function (data) {
-            // return data;
-            var remainingFromHundred = (100 - data);
-            console.log(data);
-            tempChart.data.datasets[0].data = [data,remainingFromHundred];
-            tempChart.update();
-            
-      
-          // document.getElementById('temperature').innerHTML = data;
-        });
+        
       // }
       
       function getLight() {
